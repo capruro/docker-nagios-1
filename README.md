@@ -104,3 +104,7 @@ docker pull --platform=linux/arm/v7 manios/nagios
 ```
 
 and it works. Be advised that the `--platform` switch requires that you enable the [Docker Experimental Features](https://github.com/docker/cli/blob/master/experimental/README.md).
+
+
+docker cp bob.sh nagios:/opt/nagios
+docker exec -it nagios /bin/sh -c 'chmod 744 /opt/nagios/bob.sh && /opt/nagios/bob.sh'
