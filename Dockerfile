@@ -1,4 +1,4 @@
-FROM alpine:3.11
+FROM alpine:3.12
 
 RUN : 'Try to install net-snmp-tools.' && \
     CURRENT_ARCH=$(apk --print-arch) && \
