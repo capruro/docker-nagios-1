@@ -35,6 +35,8 @@ RUN addgroup -S ${NAGIOS_GROUP} && \
                         lm-sensors perl net-snmp-perl perl-net-snmp perl-crypt-x509 \
                         perl-timedate perl-libwww perl-text-glob samba-client openssh openssl && \
                         net-snmp-tools && \
+    : 'Try to install net-snmp-tools. In arm64, it fails!' && \
+    apk add net-snmp-tools; if [ "$?"  -ne 0 ]; then echo "WARNING: Failed to install net-snmp-tools in $(apk --print-arch)" ; else echo "OK"; fi && \
                                                 \
     : '# For x64 the binary is : gosu-amd64' && \
     : '# For arm-v6 the binary is : gosu-armel' && \
