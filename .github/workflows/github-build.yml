@@ -105,4 +105,4 @@ jobs:
       -
         name: Inspect image
         run: |
-          docker buildx imagetools inspect manios/nagios:${{ env.action_mytag }}
+          docker buildx imagetools inspect capruro/nagios:${{ env.action_mytag }}
